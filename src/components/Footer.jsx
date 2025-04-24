@@ -6,9 +6,9 @@ const Footer = ({ setColor, currentColor }) => {
             <div style={footerStyles}>
                 <div style={colorOptionsStyles}>
                     {[
-                        '#ff0000', '#00ff00', '#0000ff', '#ffff00',
+                       '#ffffff', '#ff0000', '#00ff00', '#0000ff', '#ffff00',
                         '#ff00ff', '#00ffff', '#ff4500', '#32cd32',
-                        '#8a2be2', '#f0e68c', '#ffffff',
+                        '#8a2be2', '#f0e68c', 
                     ].map((colorOption) => (
                         <button
                             key={colorOption}
@@ -16,6 +16,7 @@ const Footer = ({ setColor, currentColor }) => {
                                 ...colorButtonStyles,
                                 backgroundColor: colorOption,
                                 outline: currentColor === colorOption ? '2px solid white' : 'none',
+                                zIndex: currentColor === colorOption ? '999' : '1',
                             }}
                             onClick={() => setColor(colorOption)}
                         />
